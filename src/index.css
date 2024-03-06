@@ -1,13 +1,220 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --ak-blue: #3434cfd2;
+  --ak-blue-light: #66cbfa;
+  --ak-white: #fff;
+  --ak-red: #ff0000;
+  --ak-green: #008100;
+  --ak-green-1: #abfaab;
+  --ak-orange-red: #ff6c00;
+  --ak-yellow: #ffff00;
+  --ak-gray-light-1: #f9f9f9;
+  --ak-gray-light-2: #f0f0f0;
+  --ak-gray-light-3: #b4b4b4;
+  --ak-gray-dark-1: #787878;
+  --ak-gray-dark-2: #616161;
+  --ak-gray-dark-3: #3c3c3c;
+  --ak-width: 760px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.title {
+  width: var(--ak-width);
+  margin: 1.5em auto;
+  background-color: var(--ak-blue-light);
+  color: var(--ak-blue);
+  padding: 1em 1.5em;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container {
+  width: var(--ak-width);
+  margin: 0em auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 4em;
+}
+
+.box {
+  /* background-color: #ff6c00; */
+}
+
+.heading {
+  border: 1px solid var(--ak-gray-light-3);
+  border-radius: 1em;
+  padding: 1em 1.5em;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* --------------------------------------------left box styling */
+
+.progress-list {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 0.5em;
+}
+
+.progress-list-item {
+  border: 1px solid var(--ak-blue);
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+.completed {
+  background-color: var(--ak-blue-light);
+  opacity: 0.3;
+}
+
+.progress-list-item:hover {
+  cursor: pointer;
+  background-color: var(--ak-gray-light-2);
+}
+
+.score {
+  margin: 1em;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.correct,
+.total {
+  border: 1px solid;
+  border-radius: 0.75em;
+  padding: 1em;
+}
+
+.correct {
+  background-color: var(--ak-green);
+  color: var(--ak-gray-light-1);
+}
+
+.divider {
+  font-size: 3rem;
+}
+
+.score-percentage {
+  background-color: var(--ak-yellow);
+  border: none;
+  font-size: 2rem;
+}
+
+/* --------------------------------------------accordion styling */
+
+.accordion-list {
+  list-style: none;
+  margin-top: 1em;
+}
+
+.accordion-item-heading {
+  margin-top: 0.2em;
+  border: 1px solid var(--ak-blue);
+  display: flex;
+  padding: 1em 1.5em;
+  border-radius: 0.75em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-item-heading:hover {
+  background-color: var(--ak-gray-light-2);
+  cursor: pointer;
+}
+
+.accordion-item-heading-btn {
+  border: none;
+  font-size: 1.2rem;
+  background-color: inherit;
+}
+
+.accordion-content {
+  margin: 0.5em;
+  border-top: 4px solid var(--ak-blue);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+  list-style: none;
+}
+
+.choice {
+  border: 1px solid var(--ak-blue-light);
+  border-radius: 0.75em;
+  padding: 0.4em 1em;
+  margin-top: 0.2em;
+}
+
+label {
+  display: flex;
+  gap: 1em;
+}
+
+input {
+  font-size: 2rem;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+.choice:hover {
+  background-color: var(--ak-blue);
+  color: var(--ak-white);
+}
+
+.question {
+  color: var(--ak-gray-dark-2);
+}
+
+.country {
+  color: var(--ak-blue);
+  font-weight: 600;
+}
+
+.index {
+  color: var(--ak-blue);
+}
+
+.active {
+  background-color: var(--ak-blue-light);
+}
+
+.score-btn {
+  background-color: var(--ak-gray-light-2);
+  cursor: pointer;
+}
+
+.score-btn:hover {
+  background-color: var(--ak-blue-light);
 }
